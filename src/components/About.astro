@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import { AtSign } from "@lucide/astro";
+import portraitImage from "../assets/joao-portrait.png";
+import { siteConfig } from "../config/site";
+import ButtonLink from "./ButtonLink.astro";
+---
+
+<section class="section about" id="sobre" aria-labelledby="about-title">
+  <div class="container-wide about__grid">
+    <div class="about__visual" data-reveal>
+      <div class="about__monogram" aria-hidden="true">JG</div>
+      <Image
+        src={portraitImage}
+        alt="Retrato profissional de João Garcia"
+        widths={[338, 560, 676]}
+        sizes="(max-width: 767px) 76vw, 34vw"
+        format="webp"
+        loading="lazy"
+      />
+      <p class="about__vertical">João Garcia · Advogado</p>
+    </div>
+    <div class="about__content" data-reveal>
+      <p class="section-index">Sobre <span>05</span></p>
+      <h2 id="about-title">Estratégia começa pela compreensão do cenário.</h2>
+      <p class="about__lead">
+        João Garcia é advogado, pós-graduando pela PUC e produz conteúdo relacionado à Reforma Tributária e orientação jurídica estratégica.
+      </p>
+      <a class="instagram-link" href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
+        <AtSign size={19} stroke-width={1.6} />
+        <span>{siteConfig.instagram}</span>
+      </a>
+      <ButtonLink
+        href={siteConfig.whatsappUrl}
+        label="Conversar com João"
+        icon="whatsapp"
+        external
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+import { ArrowUpRight, MessageCircle } from "@lucide/astro";
+
+interface Props {
+  href: string;
+  label: string;
+  variant?: "navy" | "light" | "outline" | "whatsapp";
+  icon?: "arrow" | "whatsapp";
+  class?: string;
+  external?: boolean;
+}
+
+const {
+  href,
+  label,
+  variant = "navy",
+  icon = "arrow",
+  class: className = "",
+  external = false,
+} = Astro.props;
+---
+
+<a
+  class:list={["button-link", `button-link--${variant}`, className]}
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+>
+  <span>{label}</span>
+  {icon === "whatsapp" ? <MessageCircle size={18} stroke-width={1.8} /> : <ArrowUpRight size={18} stroke-width={1.8} />}
+</a>

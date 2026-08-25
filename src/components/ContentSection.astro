@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import { AtSign } from "@lucide/astro";
+import instagramImage from "../assets/instagram-editorial.jpg";
+import { siteConfig } from "../config/site";
+---
+
+<section class="section content-section" aria-labelledby="content-title">
+  <div class="container-wide content-section__grid">
+    <div class="content-section__copy" data-reveal>
+      <p class="section-index">Conteúdo <span>07</span></p>
+      <h2 id="content-title">Informação para tomar decisões com mais clareza.</h2>
+      <p>
+        Acompanhe conteúdos relacionados à Reforma Tributária e à orientação jurídica estratégica no perfil de João Garcia.
+      </p>
+      <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
+        <AtSign size={19} stroke-width={1.6} />
+        Acompanhar {siteConfig.instagram}
+      </a>
+    </div>
+    <div class="content-section__visual" data-reveal>
+      <Image
+        src={instagramImage}
+        alt="Publicação de João Garcia sobre advocacia e orientação profissional"
+        widths={[480, 640]}
+        sizes="(max-width: 767px) 78vw, 32vw"
+        format="webp"
+        loading="lazy"
+      />
+      <span aria-hidden="true">Instagram / conteúdo</span>
+    </div>
+  </div>
+</section>

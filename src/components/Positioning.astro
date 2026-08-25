@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import workingImage from "../assets/joao-working.jpg";
+---
+
+<section class="section positioning" aria-labelledby="positioning-title">
+  <div class="container-wide positioning__grid">
+    <div class="positioning__statement" data-reveal>
+      <p class="section-index">Posicionamento <span>04</span></p>
+      <h2 id="positioning-title">Atuação com <em>firmeza</em> e estratégia.</h2>
+      <div class="positioning__copy">
+        <span aria-hidden="true"></span>
+        <p>Momentos de mudança exigem clareza para compreender o cenário antes de tomar decisões.</p>
+      </div>
+    </div>
+    <div class="positioning__visual" data-reveal data-parallax-wrap>
+      <Image
+        src={workingImage}
+        alt="João Garcia durante uma conversa profissional"
+        widths={[480, 720, 960]}
+        sizes="(max-width: 767px) 84vw, 36vw"
+        format="webp"
+        loading="lazy"
+        data-parallax-image
+      />
+      <p>Clareza antes da decisão.</p>
+    </div>
+  </div>
+</section>

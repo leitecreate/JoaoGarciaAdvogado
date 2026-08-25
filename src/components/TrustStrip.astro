@@ -1,0 +1,14 @@
+---
+const items = ["Advocacia estratégica", "Reforma Tributária", "Pós-graduando pela PUC"];
+---
+
+<div class="trust-strip" aria-label="Informações profissionais">
+  <div class="container-wide trust-strip__inner">
+    {items.map((item, index) => (
+      <>
+        <span>{item}</span>
+        {index < items.length - 1 && <i aria-hidden="true"></i>}
+      </>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+import { MessageCircle } from "@lucide/astro";
+import { siteConfig } from "../config/site";
+---
+
+<a
+  class="floating-whatsapp"
+  href={siteConfig.whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Falar com João pelo WhatsApp"
+>
+  <MessageCircle size={21} stroke-width={1.8} />
+  <span>Falar no WhatsApp</span>
+</a>

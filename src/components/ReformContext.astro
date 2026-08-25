@@ -1,0 +1,27 @@
+---
+const impacts = ["Planejamento", "Estrutura", "Custos", "Operações", "Decisões", "Adaptação"];
+---
+
+<section class="section reform-context" id="reforma" aria-labelledby="reform-title">
+  <div class="container-wide">
+    <div class="section-intro section-intro--split" data-reveal>
+      <div>
+        <p class="section-index">Contexto <span>01</span></p>
+        <h2 id="reform-title">A Reforma Tributária muda mais do que alíquotas.</h2>
+      </div>
+      <p>
+        Um novo cenário pode exigir atenção sobre diferentes dimensões de uma atividade. Compreender o contexto ajuda a organizar perguntas e avaliar decisões com mais clareza.
+      </p>
+    </div>
+
+    <div class="impact-list" data-stagger-group>
+      {impacts.map((item, index) => (
+        <div class="impact-list__item" data-stagger-item>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <strong>{item}</strong>
+          <i aria-hidden="true"></i>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

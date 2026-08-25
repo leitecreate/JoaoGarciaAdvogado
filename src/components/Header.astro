@@ -1,0 +1,54 @@
+---
+import { Menu, X } from "@lucide/astro";
+import { navItems, siteConfig } from "../config/site";
+import ButtonLink from "./ButtonLink.astro";
+---
+
+<header class="site-header" data-header>
+  <div class="site-header__inner container-wide">
+    <a class="wordmark" href="#top" aria-label="João Garcia — início">
+      <span class="wordmark__name">João Garcia</span>
+      <span class="wordmark__role">Advogado</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+
+    <div class="site-header__action">
+      <ButtonLink
+        href={siteConfig.whatsappUrl}
+        label="Falar no WhatsApp"
+        variant="navy"
+        icon="whatsapp"
+        external
+      />
+    </div>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      data-menu-toggle
+    >
+      <Menu class="menu-toggle__open" size={23} stroke-width={1.7} />
+      <X class="menu-toggle__close" size={23} stroke-width={1.7} />
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <nav aria-label="Navegação móvel">
+      {navItems.map((item) => <a href={item.href} data-menu-link>{item.label}</a>)}
+    </nav>
+    <ButtonLink
+      href={siteConfig.whatsappUrl}
+      label="Falar com João"
+      variant="light"
+      icon="whatsapp"
+      external
+    />
+  </div>
+  <span class="site-header__progress" aria-hidden="true" data-scroll-progress></span>
+</header>

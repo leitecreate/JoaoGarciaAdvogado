@@ -1,0 +1,68 @@
+---
+import "@fontsource/instrument-serif/latin-400.css";
+import "@fontsource/instrument-serif/latin-400-italic.css";
+import "@fontsource-variable/geist/wght.css";
+import "../styles/global.css";
+import { siteConfig } from "../config/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = siteConfig.title,
+  description = siteConfig.description,
+  image = "/og-image.jpg",
+} = Astro.props;
+
+const canonical = siteConfig.siteUrl
+  ? new URL(Astro.url.pathname, siteConfig.siteUrl).toString()
+  : undefined;
+const socialImage = siteConfig.siteUrl
+  ? new URL(image, siteConfig.siteUrl).toString()
+  : image;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  jobTitle: siteConfig.role,
+  description: siteConfig.description,
+  sameAs: [siteConfig.instagramUrl],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#252A48" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <slot />
+    <script>
+      import "../scripts/site.ts";
+      import "../scripts/smooth-scroll.ts";
+      import "../scripts/animations.ts";
+    </script>
+  </body>
+</html>

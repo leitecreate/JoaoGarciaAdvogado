@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Política de privacidade | João Garcia" description="Informações sobre privacidade e uso de dados neste site.">
+  <Header />
+  <main id="conteudo" class="legal-page">
+    <article class="container-narrow">
+      <p class="eyebrow">Privacidade</p>
+      <h1>Política de privacidade</h1>
+      <p>
+        Este site apresenta informações profissionais e direciona o visitante para canais externos de contato. Não há formulário de coleta de dados nesta versão.
+      </p>
+      <h2>Contato pelo WhatsApp</h2>
+      <p>
+        Ao escolher falar pelo WhatsApp, você acessa um serviço externo e passa a estar sujeito aos termos e à política de privacidade dessa plataforma. Envie apenas as informações necessárias para contextualizar o contato inicial.
+      </p>
+      <h2>Links externos</h2>
+      <p>
+        O site contém links para WhatsApp e Instagram. Cada plataforma possui regras próprias de tratamento de dados.
+      </p>
+      <h2>Atualizações</h2>
+      <p>
+        Esta política poderá ser atualizada caso sejam adicionados formulários, ferramentas de análise ou outros recursos que tratem dados pessoais.
+      </p>
+      <a class="text-link" href="/">Voltar para a página inicial</a>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+
+const questions = [
+  "As novas regras impactam minha atividade?",
+  "Preciso me preparar agora?",
+  "Meu planejamento atual continua fazendo sentido?",
+  "Quais mudanças merecem atenção primeiro?",
+  "Como tomar decisões durante a transição?",
+];
+---
+
+<section class="section client-questions" aria-labelledby="questions-title">
+  <div class="container-wide questions-layout">
+    <div class="questions-layout__title" data-reveal>
+      <p class="section-index">Perguntas reais <span>02</span></p>
+      <h2 id="questions-title">O que muda para o <em>seu</em> cenário?</h2>
+      <p>Uma orientação começa pelas perguntas certas — não por respostas genéricas.</p>
+    </div>
+
+    <div class="question-list" data-stagger-group>
+      {questions.map((question, index) => (
+        <a class="question-list__item" href="#consultoria" data-stagger-item>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <strong>{question}</strong>
+          <ArrowUpRight size={21} stroke-width={1.45} aria-hidden="true" />
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

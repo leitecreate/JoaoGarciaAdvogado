@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import { ArrowUp, AtSign, MessageCircle } from "@lucide/astro";
+import brandMark from "../assets/brand-mark.jpg";
+import { navItems, siteConfig } from "../config/site";
+---
+
+<footer class="site-footer">
+  <div class="container-wide site-footer__grid">
+    <div class="site-footer__brand">
+      <Image src={brandMark} alt="Marca João Garcia Advogado" width={260} format="webp" loading="lazy" />
+      <p>Advocacia estratégica e orientação sobre a Reforma Tributária.</p>
+    </div>
+    <nav aria-label="Navegação do rodapé">
+      <p>Navegação</p>
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <div class="site-footer__contact">
+      <p>Contato</p>
+      <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer">
+        <MessageCircle size={17} stroke-width={1.7} />{siteConfig.whatsappDisplay}
+      </a>
+      <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer">
+        <AtSign size={17} stroke-width={1.7} />{siteConfig.instagram}
+      </a>
+    </div>
+    <a class="site-footer__top" href="#top" aria-label="Voltar ao topo">
+      <ArrowUp size={18} stroke-width={1.5} />
+    </a>
+  </div>
+  <div class="container-wide site-footer__bottom">
+    <p>© {new Date().getFullYear()} João Garcia. Publicidade profissional de caráter informativo.</p>
+    <a href="/privacidade">Política de privacidade</a>
+  </div>
+</footer>

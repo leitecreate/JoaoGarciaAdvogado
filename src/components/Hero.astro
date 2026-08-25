@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import { ArrowDown } from "@lucide/astro";
+import heroImage from "../assets/joao-hero.jpg";
+import { siteConfig } from "../config/site";
+import ButtonLink from "./ButtonLink.astro";
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__geometry" aria-hidden="true">
+    <span></span><span></span>
+  </div>
+  <div class="hero__image-wrap" data-hero-image data-parallax-wrap>
+    <Image
+      class="hero__image"
+      src={heroImage}
+      alt="João Garcia em seu escritório"
+      widths={[640, 960, 1200, 1440]}
+      sizes="(max-width: 767px) 100vw, 54vw"
+      format="avif"
+      loading="eager"
+      fetchpriority="high"
+      data-parallax-image
+    />
+    <div class="hero__image-wash" aria-hidden="true"></div>
+    <p class="hero__vertical-note">Consultoria sobre Reforma Tributária</p>
+  </div>
+
+  <div class="hero__content container-wide">
+    <div class="hero__copy">
+      <p class="eyebrow" data-hero-reveal>{siteConfig.name} <span>·</span> {siteConfig.role}</p>
+      <h1 id="hero-title" data-hero-reveal>
+        Reforma Tributária exige <em>preparo,</em> não improviso.
+      </h1>
+      <p class="hero__lead" data-hero-reveal>
+        Orientação jurídica para compreender os impactos das novas regras e tomar decisões com mais segurança e estratégia.
+      </p>
+      <div class="hero__actions" data-hero-reveal>
+        <ButtonLink
+          href={siteConfig.whatsappUrl}
+          label="Falar com João pelo WhatsApp"
+          icon="whatsapp"
+          external
+        />
+        <ButtonLink href="#consultoria" label="Entender a consultoria" variant="outline" />
+      </div>
+      <div class="hero__meta" data-hero-reveal>
+        <span>Atendimento direto e confidencial.</span>
+        <span>{siteConfig.education}</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#reforma" aria-label="Ir para a próxima seção">
+    <ArrowDown size={18} stroke-width={1.5} />
+    <span>Explorar</span>
+  </a>
+</section>

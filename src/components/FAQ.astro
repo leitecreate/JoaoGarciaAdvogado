@@ -1,0 +1,68 @@
+---
+import { Plus } from "@lucide/astro";
+
+const faqs = [
+  {
+    question: "O que é a consultoria sobre Reforma Tributária?",
+    answer:
+      "É uma orientação jurídica voltada a compreender o contexto apresentado, esclarecer questões relacionadas ao tema e organizar pontos que podem merecer atenção.",
+  },
+  {
+    question: "A Reforma Tributária já pode impactar minhas decisões?",
+    answer:
+      "Cada situação precisa ser compreendida individualmente. A consultoria ajuda a avaliar o cenário e a identificar quais aspectos podem ser relevantes durante o período de mudança.",
+  },
+  {
+    question: "A consultoria é apenas para empresas?",
+    answer:
+      "A adequação depende da necessidade apresentada. No contato inicial, João pode compreender a dúvida e verificar se ela se relaciona ao escopo da consultoria.",
+  },
+  {
+    question: "O primeiro contato é pelo WhatsApp?",
+    answer:
+      "Sim. Pelo WhatsApp, você pode explicar brevemente sua dúvida e receber a orientação inicial sobre os próximos passos do atendimento.",
+  },
+  {
+    question: "Quais informações devo enviar inicialmente?",
+    answer:
+      "Uma descrição breve da sua situação, da atividade envolvida e da principal dúvida já ajuda a contextualizar o contato. Documentos só devem ser enviados quando forem solicitados.",
+  },
+];
+---
+
+<section class="section faq" id="duvidas" aria-labelledby="faq-title">
+  <div class="container-wide faq__grid">
+    <div class="faq__intro" data-reveal>
+      <p class="section-index">Perguntas frequentes <span>09</span></p>
+      <h2 id="faq-title">Dúvidas antes de conversar?</h2>
+      <p>Informações iniciais para você entender como funciona o contato.</p>
+    </div>
+    <div class="faq__list" data-faq-list>
+      {faqs.map((faq, index) => (
+        <div class="faq__item" data-reveal>
+          <h3>
+            <button
+              type="button"
+              aria-expanded="false"
+              aria-controls={`faq-panel-${index}`}
+              id={`faq-button-${index}`}
+              data-faq-button
+            >
+              <span>{faq.question}</span>
+              <Plus size={21} stroke-width={1.5} aria-hidden="true" />
+            </button>
+          </h3>
+          <div
+            class="faq__panel"
+            id={`faq-panel-${index}`}
+            role="region"
+            aria-labelledby={`faq-button-${index}`}
+            data-faq-panel
+          >
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
