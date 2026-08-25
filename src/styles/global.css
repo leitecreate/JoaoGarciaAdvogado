@@ -12,7 +12,7 @@
   --muted: #70757a;
   --line-dark: rgba(8, 21, 34, 0.12);
   --line-light: rgba(245, 242, 234, 0.12);
-  --display: "Instrument Serif", Georgia, serif;
+  --display: "Newsreader Variable", Georgia, serif;
   --body: "Geist Variable", "Geist", Arial, sans-serif;
   --container: 1280px;
   --gutter: clamp(1.5rem, 3.2vw, 3rem);
@@ -136,13 +136,13 @@ h2 {
   margin-bottom: 0;
   font-family: var(--display);
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.027em;
 }
 
 h2 {
   color: var(--navy-950);
   font-size: clamp(3.5rem, 5.6vw, 5rem);
-  line-height: 0.98;
+  line-height: 1.01;
 }
 
 .eyebrow {
@@ -258,7 +258,8 @@ h2 {
 .wordmark__name {
   font-family: var(--display);
   font-size: 1.6rem;
-  letter-spacing: -0.02em;
+  font-weight: 480;
+  letter-spacing: -0.025em;
   line-height: 1;
 }
 
@@ -353,13 +354,13 @@ h2 {
   max-width: 760px;
   margin-bottom: 1.8rem;
   color: var(--warm-white);
-  font-size: clamp(4.1rem, 6.4vw, 6.25rem);
-  line-height: 0.91;
+  font-size: clamp(4rem, 5.3vw, 5.3rem);
+  line-height: 0.95;
 }
 
 .hero h1 em {
   color: var(--gold-light);
-  font-weight: 400;
+  font-weight: 360;
 }
 
 .hero__lead {
@@ -465,7 +466,7 @@ h2 {
   color: var(--navy-950);
   font-family: var(--display);
   font-size: clamp(1.7rem, 2.4vw, 2.2rem);
-  font-weight: 400;
+  font-weight: 430;
 }
 
 .context__item p {
@@ -524,8 +525,8 @@ h2 {
   color: var(--navy-950);
   font-family: var(--display);
   font-size: clamp(2.25rem, 3.8vw, 3.3rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-weight: 420;
+  letter-spacing: -0.025em;
 }
 
 .consulting__pillars p {
@@ -666,8 +667,8 @@ h2 {
   color: var(--navy-950);
   font-family: var(--display);
   font-size: clamp(1.75rem, 2.5vw, 2.3rem);
-  font-weight: 400;
-  line-height: 1.05;
+  font-weight: 420;
+  line-height: 1.08;
 }
 
 .process__steps p {
@@ -796,7 +797,7 @@ h2 {
   margin-bottom: 2rem;
   color: var(--warm-white);
   font-size: clamp(4rem, 7vw, 6.7rem);
-  line-height: 0.94;
+  line-height: 0.98;
 }
 
 .cta-section__copy > p:last-child {
@@ -874,6 +875,7 @@ h2 {
   color: var(--ivory);
   font-family: var(--display);
   font-size: 2rem;
+  font-weight: 480;
   line-height: 1;
 }
 
@@ -1127,7 +1129,7 @@ h2 {
     max-width: 100%;
     margin-bottom: 1.5rem;
     font-size: clamp(3.15rem, 13.5vw, 4.15rem);
-    line-height: 0.93;
+    line-height: 0.97;
   }
 
   .hero h1 br {
