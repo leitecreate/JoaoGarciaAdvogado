@@ -5,12 +5,12 @@ const steps = [
     text: "Envie uma mensagem pelo WhatsApp e explique brevemente sua dúvida.",
   },
   {
-    title: "Contextualize sua situação",
-    text: "As informações iniciais ajudam a compreender a necessidade apresentada.",
+    title: "Explique sua situação",
+    text: "Conte brevemente sua dúvida e o contexto que motivou o contato.",
   },
   {
-    title: "Entenda os próximos passos",
-    text: "Com o cenário mais claro, podem ser avaliadas as possibilidades de orientação.",
+    title: "Entenda como o atendimento pode seguir",
+    text: "A partir das informações iniciais, é possível avaliar a aderência à consultoria.",
   },
 ];
 ---
@@ -18,13 +18,12 @@ const steps = [
 <section class="section process" id="como-funciona" aria-labelledby="process-title">
   <div class="container-wide">
     <div class="process__header" data-reveal>
-      <p class="section-index">Como funciona <span>06</span></p>
-      <h2 id="process-title">Uma conversa pode ser o primeiro passo.</h2>
+      <p class="eyebrow">Como funciona</p>
+      <h2 id="process-title">Um caminho simples para começar.</h2>
     </div>
-    <div class="process__line" data-line-reveal aria-hidden="true"></div>
-    <ol class="process__steps" data-stagger-group>
+    <ol class="process__steps">
       {steps.map((step, index) => (
-        <li data-stagger-item>
+        <li>
           <span>{String(index + 1).padStart(2, "0")}</span>
           <h3>{step.title}</h3>
           <p>{step.text}</p>

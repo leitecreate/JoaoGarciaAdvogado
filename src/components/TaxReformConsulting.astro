@@ -1,45 +1,37 @@
 ---
-import { Check } from "@lucide/astro";
 import { siteConfig } from "../config/site";
 import ButtonLink from "./ButtonLink.astro";
 
-const points = [
-  "Compreender o contexto",
-  "Identificar pontos que merecem atenção",
-  "Esclarecer questões jurídicas",
-  "Avaliar possíveis impactos",
-  "Organizar próximos passos",
+const pillars = [
+  { title: "Compreender", text: "Entender o contexto e os pontos que merecem atenção." },
+  { title: "Avaliar", text: "Organizar dúvidas e possíveis impactos relacionados à mudança." },
+  { title: "Orientar", text: "Definir quais próximos passos podem fazer sentido para a situação apresentada." },
 ];
 ---
 
 <section class="section consulting" id="consultoria" aria-labelledby="consulting-title">
-  <div class="consulting__rule" data-line-reveal aria-hidden="true"></div>
   <div class="container-wide consulting__inner">
-    <div class="consulting__label" data-reveal>
-      <span>03</span>
-      <p>Consultoria</p>
-    </div>
     <div class="consulting__main" data-reveal>
-      <p class="eyebrow eyebrow--gold">Orientação jurídica estratégica</p>
-      <h2 id="consulting-title">Consultoria sobre a <em>Reforma Tributária</em></h2>
-    </div>
-    <div class="consulting__details" data-reveal>
+      <p class="eyebrow">Orientação jurídica estratégica</p>
+      <h2 id="consulting-title">Consultoria sobre a Reforma Tributária</h2>
       <p>
-        A consultoria organiza a análise do cenário apresentado e ajuda a transformar um tema complexo em pontos de atenção mais claros.
+        Uma análise direcionada à realidade apresentada, com linguagem objetiva e atenção ao que efetivamente pode importar para a sua situação.
       </p>
-      <ul>
-        {points.map((point) => (
-          <li><Check size={16} stroke-width={1.7} aria-hidden="true" /><span>{point}</span></li>
-        ))}
-      </ul>
       <ButtonLink
         href={siteConfig.whatsappUrl}
-        label="Quero entender meu cenário"
-        variant="light"
+        label="Quero conversar sobre meu cenário"
+        variant="navy"
         icon="whatsapp"
         external
       />
     </div>
+    <div class="consulting__pillars" data-reveal>
+      {pillars.map((pillar) => (
+        <article>
+          <h3>{pillar.title}</h3>
+          <p>{pillar.text}</p>
+        </article>
+      ))}
+    </div>
   </div>
-  <p class="consulting__ghost" aria-hidden="true">Reforma</p>
 </section>

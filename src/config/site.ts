@@ -16,12 +16,11 @@ export const siteConfig = {
   title: "João Garcia | Advogado — Consultoria sobre Reforma Tributária",
   description:
     "Orientação jurídica sobre a Reforma Tributária para compreender mudanças, avaliar pontos de atenção e tomar decisões com mais clareza e estratégia.",
-  siteUrl: "",
+  siteUrl: "https://joaogarciaadv.vercel.app",
 } as const;
 
 export const navItems = [
-  { label: "Reforma Tributária", href: "#reforma" },
+  { label: "Consultoria", href: "#consultoria" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Como funciona", href: "#como-funciona" },
   { label: "Dúvidas", href: "#duvidas" },
 ] as const;

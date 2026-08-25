@@ -3,12 +3,17 @@ const progress = document.querySelector<HTMLElement>("[data-scroll-progress]");
 const menuToggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
 const mobileMenu = document.querySelector<HTMLElement>("[data-mobile-menu]");
 const mobileCta = document.querySelector<HTMLElement>("[data-mobile-cta]");
+const footer = document.querySelector<HTMLElement>("[data-footer]");
+let footerVisible = false;
 
 const updateScrollState = () => {
   const scrollTop = window.scrollY;
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
   header?.classList.toggle("is-scrolled", scrollTop > 24);
-  mobileCta?.classList.toggle("is-visible", scrollTop > Math.min(460, window.innerHeight * 0.55));
+  mobileCta?.classList.toggle(
+    "is-visible",
+    scrollTop > Math.min(460, window.innerHeight * 0.55) && !footerVisible,
+  );
 
   if (progress) {
     const percentage = scrollable > 0 ? Math.min(1, scrollTop / scrollable) : 0;
@@ -64,3 +69,14 @@ window.addEventListener("resize", () => {
 });
 
 updateScrollState();
+
+if (footer) {
+  const footerObserver = new IntersectionObserver(
+    ([entry]) => {
+      footerVisible = entry.isIntersecting;
+      updateScrollState();
+    },
+    { threshold: 0.08 },
+  );
+  footerObserver.observe(footer);
+}

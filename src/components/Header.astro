@@ -2,9 +2,15 @@
 import { Menu, X } from "@lucide/astro";
 import { navItems, siteConfig } from "../config/site";
 import ButtonLink from "./ButtonLink.astro";
+
+interface Props {
+  solid?: boolean;
+}
+
+const { solid = false } = Astro.props;
 ---
 
-<header class="site-header" data-header>
+<header class:list={["site-header", solid && "site-header--solid"]} data-header>
   <div class="site-header__inner container-wide">
     <a class="wordmark" href="#top" aria-label="João Garcia — início">
       <span class="wordmark__name">João Garcia</span>

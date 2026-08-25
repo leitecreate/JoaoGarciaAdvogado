@@ -1,40 +1,24 @@
 ---
 import { siteConfig } from "../config/site";
 import ButtonLink from "./ButtonLink.astro";
-
-interface Props {
-  final?: boolean;
-}
-
-const { final = false } = Astro.props;
 ---
 
-<section class:list={["cta-section", final && "cta-section--final"]} aria-labelledby={final ? "final-cta-title" : "mid-cta-title"}>
-  <div class="cta-section__geometry" aria-hidden="true"><span></span><span></span></div>
+<section class="cta-section" aria-labelledby="final-cta-title">
   <div class="container-wide cta-section__grid">
-    <div class="cta-section__number" aria-hidden="true">{final ? "10" : "08"}</div>
-    <div data-reveal>
-      <p class="eyebrow eyebrow--gold">Contato direto</p>
-      <h2 id={final ? "final-cta-title" : "mid-cta-title"}>
-        {final
-          ? "Mudanças importantes exigem decisões bem orientadas."
-          : "Não espere a mudança chegar para começar a entender os impactos."}
-      </h2>
+    <div class="cta-section__copy" data-reveal>
+      <p class="eyebrow eyebrow--gold">Conversa direta com João</p>
+      <h2 id="final-cta-title">Entenda como as mudanças podem impactar o seu cenário.</h2>
+      <p>Explique sua situação e receba uma orientação inicial sobre como o atendimento pode seguir.</p>
     </div>
     <div class="cta-section__action" data-reveal>
-      <p>
-        {final
-          ? "Converse diretamente pelo WhatsApp e explique sua situação."
-          : "Explique sua situação e entenda quais pontos podem merecer atenção no seu cenário."}
-      </p>
       <ButtonLink
         href={siteConfig.whatsappUrl}
-        label={final ? "Falar com João pelo WhatsApp" : "Falar pelo WhatsApp"}
+        label="Falar com João pelo WhatsApp"
         variant="light"
         icon="whatsapp"
         external
       />
-      {final && <small>Atendimento direto e confidencial.</small>}
+      <small>Atendimento direto e confidencial.</small>
     </div>
   </div>
 </section>
