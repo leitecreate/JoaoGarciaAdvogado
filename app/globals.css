@@ -1,0 +1,336 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* João Garcia · tokens. Cores da marca v4 do cliente (material-cliente/identidade).
+   Regras de uso no DESIGN.md. Nenhum hex fora deste arquivo. */
+
+:root {
+  /* marca */
+  --ivory: #f3f2ed;
+  --paper: #fbfaf7;
+  --navy: #101728;
+  --navy-raised: #18223a;
+  --navy-line: #2b3753;
+  --navy-glow: #1f3a66;
+  --navy-soft: #4b5368;
+  --mist: #c9cedb;
+  --tone: #e6e4db;
+  --gold: #c4ac78;
+  --gold-deep: #7d6234;
+  --star: #fbbc04;
+
+  /* papéis do shadcn mapeados para a marca */
+  --background: var(--ivory);
+  --foreground: var(--navy);
+  --card: var(--paper);
+  --card-foreground: var(--navy);
+  --popover: var(--navy);
+  --popover-foreground: var(--ivory);
+  --primary: var(--gold);
+  --primary-foreground: var(--navy);
+  --secondary: var(--tone);
+  --secondary-foreground: var(--navy);
+  --muted: var(--tone);
+  --muted-foreground: var(--navy-soft);
+  --accent: var(--tone);
+  --accent-foreground: var(--navy);
+  --destructive: #a1301f;
+  --border: var(--tone);
+  --input: var(--tone);
+  --ring: var(--gold-deep);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-navy: var(--navy);
+  --color-navy-raised: var(--navy-raised);
+  --color-navy-line: var(--navy-line);
+  --color-navy-soft: var(--navy-soft);
+  --color-mist: var(--mist);
+  --color-tone: var(--tone);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-star: var(--star);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  --font-display: var(--font-text), system-ui, sans-serif;
+  --font-sans: var(--font-text), system-ui, sans-serif;
+  --font-heading: var(--font-text), system-ui, sans-serif;
+}
+
+@theme {
+  /* cinco tamanhos, nada além disso */
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.45;
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-body--line-height: 1.6;
+  --text-lead: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+  --text-lead--line-height: 1.35;
+  --text-head: clamp(1.75rem, 1.35rem + 1.7vw, 2.75rem);
+  --text-head--line-height: 1.14;
+  --text-hero: clamp(1.875rem, 1.3rem + 2.8vw, 3.75rem);
+  --text-hero--line-height: 1.1;
+  --text-giant: clamp(5rem, 19vw, 18rem);
+  --text-giant--line-height: 1;
+
+  /* ritmo e moldura */
+  --spacing-gutter: clamp(1.25rem, 3.4vw, 3rem);
+  --spacing-section: clamp(4.5rem, 8vw, 7.5rem);
+  --spacing-header: clamp(5rem, 3.6rem + 2.6vw, 6.5rem);
+  --spacing-notch: clamp(2.5rem, 6vw, 5.5rem);
+  --spacing-band: 20rem;
+  --container-page: 76rem;
+
+  --shadow-card: 0 1px 2px rgb(16 23 40 / 0.05), 0 12px 32px -16px rgb(16 23 40 / 0.18);
+
+  /* movimento */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-float: float 2.6s ease-in-out infinite alternate;
+  --animate-spin-slow: spin 28s linear infinite;
+  --animate-shine: shine 5s ease-in-out infinite;
+  --animate-line-up: line-up 900ms var(--ease-out-expo) both;
+  --animate-pulse-ring: pulse-ring 2.4s ease-out infinite;
+  --animate-draw: draw 1.8s var(--ease-out-expo) both;
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes float {
+    from {
+      transform: translateY(-4px);
+    }
+    to {
+      transform: translateY(4px);
+    }
+  }
+  @keyframes shine {
+    0%,
+    55% {
+      transform: translateX(-120%) skewX(-16deg);
+    }
+    85%,
+    100% {
+      transform: translateX(520%) skewX(-16deg);
+    }
+  }
+  @keyframes line-up {
+    from {
+      transform: translateY(110%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes pulse-ring {
+    from {
+      transform: scale(0.6);
+      opacity: 0.8;
+    }
+    to {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  /* barra de rolagem nas cores do João */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--navy);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border: 3px solid var(--navy);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ivory);
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    html {
+      scrollbar-color: var(--gold) var(--navy);
+    }
+  }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--spacing-header);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground text-body antialiased;
+    font-feature-settings: "kern", "liga";
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    @apply bg-gold text-navy;
+  }
+  :focus-visible {
+    outline: 3px solid var(--gold-deep);
+    outline-offset: 3px;
+  }
+  .on-dark :focus-visible {
+    outline-color: var(--gold);
+  }
+  /* anel de foco dos componentes shadcn: ouro escuro no claro, ouro no marinho */
+  .on-dark {
+    --ring: var(--gold);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* moldura central das seções */
+@utility shell {
+  width: 100%;
+  max-width: calc(var(--container-page) + var(--spacing-gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+/* alinham o texto à moldura quando a foto ao lado encosta na borda da tela */
+@utility pl-edge {
+  padding-left: max(var(--spacing-gutter), calc((100vw - var(--container-page)) / 2));
+}
+@utility pr-edge {
+  padding-right: max(var(--spacing-gutter), calc((100vw - var(--container-page)) / 2));
+}
+
+/* usada pela página de privacidade */
+@utility grid-page {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2vw, 2rem);
+  padding-inline: var(--spacing-gutter);
+}
+
+/* cabeçalho: faixa que clareia para a direita, como na referência Gustavo Vicelli */
+@utility bg-header {
+  background-color: var(--navy);
+  background-image: linear-gradient(90deg, var(--navy) 0%, var(--navy-raised) 55%, var(--navy-glow) 100%);
+}
+
+/* fundo marinho com o brilho azul das referências */
+@utility bg-deep {
+  background-color: var(--navy);
+  background-image: radial-gradient(
+    70rem 40rem at 78% -10%,
+    color-mix(in oklab, var(--navy-glow) 75%, transparent),
+    transparent 70%
+  );
+}
+
+/* luz de recorte atrás do retrato do hero: marinho claro com um toque de ouro no centro */
+@utility bg-halo {
+  background-image: radial-gradient(
+    closest-side,
+    color-mix(in oklab, var(--navy-glow) 80%, var(--gold) 20%) 0%,
+    color-mix(in oklab, var(--navy-glow) 70%, transparent) 40%,
+    transparent 100%
+  );
+}
+
+/* recorte diagonal na base do hero, o entalhe da referência Laurence Possebon */
+@utility clip-hero {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--spacing-notch)),
+    86% calc(100% - var(--spacing-notch)),
+    calc(86% - var(--spacing-notch)) 100%,
+    0 100%
+  );
+}
+
+/* corte diagonal da foto da apresentação: lado direito no computador, base no celular */
+@utility clip-band {
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--spacing-notch)) 100%, 0 100%);
+}
+@utility clip-band-base {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--spacing-notch)), 0 100%);
+}
+
+/* cantos da quebra entre o claro e o escuro: a cor de cima cobre o canto da seção escura */
+@utility corner-cut-left {
+  mask-image: radial-gradient(circle at 100% 100%, transparent 1.5rem, black 1.55rem);
+}
+@utility corner-cut-right {
+  mask-image: radial-gradient(circle at 0 100%, transparent 1.5rem, black 1.55rem);
+}
+
+/* abre e fecha os <details> com suavidade, onde o navegador suporta */
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+    details::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition:
+        block-size 350ms var(--ease-out-expo),
+        content-visibility 350ms allow-discrete;
+    }
+    details[open]::details-content {
+      block-size: auto;
+    }
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "base-nova",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "iconLibrary": "lucide",
+  "rtl": false,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "menuColor": "default",
+  "menuAccent": "subtle",
+  "registries": {
+    "@coss": "https://coss.com/ui/r/{name}.json",
+    "@reui": "https://reui.io/r/{style}/{name}.json",
+    "@diceui": "https://diceui.com/r/{style}/{name}.json",
+    "@kibo-ui": "https://www.kibo-ui.com/r/{name}.json",
+    "@tailark": "https://tailark.com/r/{name}.json",
+    "@shadcn-studio": "https://shadcnstudio.com/r/{style}/{name}.json",
+    "@shadcnblocks": "https://shadcnblocks.com/r/{name}.json",
+    "@efferd": "https://efferd.com/r/{name}.json",
+    "@blocks-so": "https://blocks.so/r/{name}.json",
+    "@shadcn-exchange": "https://shadcn.exchange/r/{name}.json",
+    "@animate-ui": "https://animate-ui.com/r/{name}.json",
+    "@motion-primitives": "https://motion-primitives.com/c/{name}.json",
+    "@smoothui": "https://smoothui.dev/r/{name}.json",
+    "@react-bits": "https://reactbits.dev/r/{name}.json",
+    "@magicui": "https://magicui.design/r/{name}",
+    "@skiper-ui": "https://skiper-ui.com/registry/{name}.json",
+    "@cult-ui": "https://cult-ui.com/r/{name}.json",
+    "@kokonutui": "https://kokonutui.com/r/{name}.json",
+    "@aceternity": "https://ui.aceternity.com/registry/{name}.json",
+    "@lucide-animated": "https://lucide-animated.com/r/{name}.json",
+    "@svgl": "https://svgl.app/r/{name}.json",
+    "@dashboardblocks": "https://www.dashboardblocks.com/r/{style}/{name}.json",
+    "@evilcharts": "https://evilcharts.com/r/{name}.json"
+  }
+}

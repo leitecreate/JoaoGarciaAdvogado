@@ -1,25 +1,20 @@
-# João Garcia Advogado
+# João Garcia, advogado
 
-Landing page institucional e de conversão para a consultoria sobre Reforma Tributária de João Garcia.
-
-## Desenvolvimento
-
-```sh
-npm install
-npm run dev
-```
-
-Validação e build de produção:
+Site institucional de João Garcia (advocacia empresarial, Itajaí/SC). Next.js 16 (App Router), React 19,
+TypeScript, Tailwind CSS v4, shadcn/ui (Base UI) e Motion. Deploy previsto na Vercel.
 
 ```sh
+npm ci
+npm run dev        # http://localhost:3000
+npm run lint
 npm run build
-npm run preview
+npm run start      # serve o build
 ```
 
-## Conteúdo e contatos
+- Instruções de trabalho: `CLAUDE.md`
+- Direção visual, tokens e decisões: `DESIGN.md`
+- Dados do negócio: `lib/site.ts` · textos: `lib/content.ts` · fotos: `lib/images.ts`
+- Material do cliente (fotos originais, marca, briefing): `../material-cliente/`
 
-Os dados centrais, links de WhatsApp, Instagram, título e descrição ficam em `src/config/site.ts`. Para ativar URL canônica e imagens sociais absolutas, informe o domínio de produção em `siteConfig.siteUrl`.
-
-## Publicação
-
-O projeto usa Astro com saída estática e está preparado para deploy na Vercel. O diretório gerado é `dist/`.
+O commit `165775b` guarda a versão anterior completa (Astro e a primeira migração para Next), as identidades v2 a v4
+e os materiais preservados, caso algo precise ser recuperado.
