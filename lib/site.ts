@@ -39,7 +39,6 @@ export const site = {
   },
 
   // Crédito do estúdio no rodapé.
-  credit: { name: "Vitral Studios", url: "https://vitralstudios.vercel.app" },
 
   social: {
     instagram: "https://www.instagram.com/joao.garcia.adv/",

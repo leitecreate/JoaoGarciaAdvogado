@@ -5,6 +5,7 @@ import { InstagramIcon, WhatsAppIcon } from "@/components/layout/Icons";
 import { WhatsAppCta } from "@/components/layout/WhatsAppCta";
 import { nav } from "@/components/layout/nav";
 import { footer, seoFooter } from "@/lib/content";
+import { creditLabel, creditUrl } from "@/lib/credit";
 import { mapsUrl, site, whatsappUrl } from "@/lib/site";
 
 // Um só ritmo para as colunas: título dourado e itens com a mesma altura, todos com ícone quando são contato.
@@ -124,12 +125,9 @@ export function Footer() {
                 </summary>
               </details>
             </div>
-            <p>
-              Site feito por{" "}
-              <a href={site.credit.url} target="_blank" rel="noopener" className="inline-flex min-h-9 items-center transition-colors hover:text-gold">
-                {site.credit.name}
-              </a>
-            </p>
+            <a href={creditUrl(site.name)} target="_blank" rel="noopener" className="inline-flex min-h-9 items-center transition-colors hover:text-gold">
+              {creditLabel}
+            </a>
           </div>
           <div id="rodape-areas" className="hidden pb-4 group-has-[details[open]]/fim:block">
             <p className="max-w-[80ch]">{seoFooter.text}</p>
