@@ -53,7 +53,7 @@ Ouro como texto só sobre o marinho. Sobre o claro, o ouro escuro.
 - Botão: `WhatsAppCta` (dourado, com o ícone em círculo claro)
 - Movimento (referência gmv.adv.br, tokens `--animate-*` no `globals.css`):
   - Hero: título sobe linha por linha, foto desce mais devagar que a página, selo OAB flutua, selo redondo gira
-  - Rolagem: `RevealObserver` sobe textos e abre fotos de baixo para cima; palavra ATENDIMENTO anda de lado; pino do mapa pulsa
+  - Rolagem: `RevealObserver` sobe textos e abre fotos de baixo para cima; palavra ATENDIMENTO anda de lado; pino do mapa pulsa e recebe raios dourados de vários pontos do Brasil, em ciclo (desenha, segura, o pino recolhe; `MapRays`)
   - Avaliações: troca a cada 6s só quando visível; espera com o mouse ou foco e para de vez no primeiro toque ou clique (sem botão de pausa, a pedido do Leite)
   - Botões: faixa de brilho a cada 5s e leve subida no hover
   - `prefers-reduced-motion`: tudo isso desliga, e o conteúdo nunca fica escondido sem script

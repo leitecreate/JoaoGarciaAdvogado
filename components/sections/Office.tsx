@@ -3,6 +3,7 @@ import { Notch } from "@/components/layout/Notch";
 import { ScrollWord } from "@/components/motion/ScrollMotion";
 import { SectionHeading } from "@/components/layout/SectionHeading";
 import { WhatsAppCta } from "@/components/layout/WhatsAppCta";
+import { MapRays } from "@/components/sections/MapRays";
 import { office } from "@/lib/content";
 import { brazilMap } from "@/lib/mapa-brasil";
 import { mapsUrl, site } from "@/lib/site";
@@ -22,6 +23,7 @@ export function Office() {
             className="w-full text-mist"
           >
             <path d={brazilMap.stripes} fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" />
+            <MapRays pin={brazilMap.pin} />
             <circle cx={brazilMap.pin.x} cy={brazilMap.pin.y} r="24" className="origin-center fill-gold/40 [transform-box:fill-box] motion-safe:animate-pulse-ring" />
             <circle cx={brazilMap.pin.x} cy={brazilMap.pin.y} r="11" className="fill-gold" />
           </svg>
