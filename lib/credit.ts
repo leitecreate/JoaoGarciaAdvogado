@@ -2,7 +2,7 @@
 // Quando o portfólio existir, preencha AUTHOR_SITE: o link deixa de ir para o WhatsApp.
 const AUTHOR = "joão gabriel";
 const AUTHOR_SITE = ""; // TODO: endereço do portfólio, ex.: https://joaogabriel.com.br
-const AUTHOR_WHATSAPP = "5551980317999";
+const AUTHOR_WHATSAPP = "5551993389808";
 
 export const creditLabel = `feito por ${AUTHOR}`;
 
